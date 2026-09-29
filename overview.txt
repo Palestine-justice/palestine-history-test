@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palestine History | Visual Overview</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SAME HEADER AS THE HOME PAGE -->
+  <header class="site-header">
+    <a class="site-title" href="index.html">Palestine History</a>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-menu" id="mainMenu">
+      <a href="index.html">History overview</a>
+      <a href="overview.html">Visual overview</a>
+      <a href="https://palestine-justice.github.io/weblinks/" target="_blank" rel="noopener">Palestine Justice links</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero small-hero">
+      <p class="eyebrow">Page 2</p>
+      <h1>Overview</h1>
+      <p class="intro">
+        Two visual summaries exploring population change, displacement, historical narrative and Palestinian rights.
+      </p>
+    </section>
+
+    <!-- ============================================
+         IMAGE SECTION
+         The image files are stored in the /images folder.
+         If you replace an image later, either keep the same
+         filename or change the src="..." below.
+         ============================================ -->
+    <section class="poster-grid">
+      <figure class="poster-card">
+        <img src="images/history-poster.png" alt="Palestinian Justice history infographic with population charts and a map">
+        <figcaption>
+          A visual overview of population change, the 1948 displacement and the territorial situation after 1949.
+        </figcaption>
+      </figure>
+
+      <figure class="poster-card">
+        <img src="images/overview-poster.png" alt="Taught one story, hear the other poster about questioning narratives and listening to Palestinians">
+        <figcaption>
+          A poster encouraging readers to question narratives, listen to Palestinian voices and consider human impact.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="link-box">
+      <h2>Continue exploring</h2>
+      <p>The Palestine Justice directory collects media, campaign and human-rights links in one place.</p>
+      <a class="button-link" href="https://palestine-justice.github.io/weblinks/" target="_blank" rel="noopener">
+        Visit Palestine Justice Weblinks
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Palestine History — a beginner-friendly educational website.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+/* ============================================================
+   PALESTINE HISTORY WEBSITE - STYLESHEET
+   ============================================================
+
+   COLOUR TABLE
+   ----------------------------------------------------------------
+   Colour name          Used for                         Hex code
+   ----------------------------------------------------------------
+   Palestine green      Header, buttons, accents        #0B5D3B
+   Deep green           Hover / darker accents          #073F2A
+   Palestine red        Important accents               #D9272E
+   Warm cream           Main page background            #F8F4EA
+   White                Cards / menu                    #FFFFFF
+   Charcoal             Main text                       #222222
+   Mid grey             Secondary text                  #666666
+   Pale green           Notes / current period          #E7F2EC
+   Pale sand            Date labels                     #EFE5CF
+   ----------------------------------------------------------------
+
+   TIP FOR BEGINNERS:
+   Change a colour once in the :root section below and it will
+   update everywhere that variable is used in the website.
+   ============================================================ */
+
+:root {
+  --green: #0B5D3B;
+  --dark-green: #073F2A;
+  --red: #D9272E;
+  --cream: #F8F4EA;
+  --white: #FFFFFF;
+  --text: #222222;
+  --grey: #666666;
+  --pale-green: #E7F2EC;
+  --pale-sand: #EFE5CF;
+  --border: #D8D1C3;
+}
+
+/* A simple reset makes spacing more predictable in different browsers. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+}
+
+/* ---------------- HEADER AND HAMBURGER MENU ---------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 12px 20px;
+  background: var(--green);
+  color: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.site-title {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* The hamburger button is made from three simple horizontal lines. */
+.menu-button {
+  width: 46px;
+  height: 42px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  height: 3px;
+  margin: 5px 0;
+  border-radius: 2px;
+  background: var(--white);
+}
+
+/* Hidden until JavaScript adds the class "menu-open". */
+.main-menu {
+  display: none;
+  position: absolute;
+  top: 68px;
+  right: 12px;
+  width: min(300px, calc(100vw - 24px));
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.main-menu.menu-open {
+  display: block;
+}
+
+.main-menu a {
+  display: block;
+  padding: 15px 18px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.main-menu a:last-child {
+  border-bottom: none;
+}
+
+.main-menu a:hover,
+.main-menu a:focus {
+  background: var(--pale-green);
+}
+
+/* ---------------- MAIN PAGE LAYOUT ---------------- */
+main {
+  width: min(1050px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 56px 0 28px;
+  text-align: center;
+}
+
+.small-hero {
+  padding-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--red);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  max-width: 850px;
+  margin: 0 auto 18px;
+  line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.intro {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+}
+
+.note {
+  max-width: 760px;
+  margin: 22px auto 0;
+  padding: 14px 16px;
+  border-left: 5px solid var(--green);
+  background: var(--pale-green);
+  text-align: left;
+}
+
+/* ---------------- HISTORY TIMELINE ---------------- */
+.timeline {
+  display: grid;
+  gap: 18px;
+  padding: 12px 0 40px;
+}
+
+.period-card {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.period-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--pale-green);
+  font-size: 1.7rem;
+}
+
+.period-date {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 4px 9px;
+  border-radius: 5px;
+  background: var(--pale-sand);
+  color: var(--dark-green);
+  font-weight: bold;
+}
+
+.period-card h2 {
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.period-card p:last-child {
+  margin-bottom: 0;
+}
+
+.current-period {
+  border-left: 7px solid var(--red);
+  background: var(--pale-green);
+}
+
+/* ---------------- POSTER PAGE ---------------- */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  padding: 8px 0 40px;
+}
+
+.poster-card {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.poster-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.poster-card figcaption {
+  padding: 12px 4px 2px;
+  color: var(--grey);
+}
+
+/* ---------------- LINK BOX AND BUTTON ---------------- */
+.link-box {
+  margin: 10px 0 50px;
+  padding: 28px;
+  border-radius: 12px;
+  background: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+}
+
+.link-box h2 {
+  margin-top: 0;
+}
+
+.button-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--dark-green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus {
+  background: var(--pale-sand);
+}
+
+/* ---------------- FOOTER ---------------- */
+.site-footer {
+  padding: 24px 16px;
+  background: #111111;
+  color: #DDDDDD;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------------- SMALL SCREENS ----------------
+   On phones, cards change from two columns to one.
+   ------------------------------------------------ */
+@media (max-width: 700px) {
+  main {
+    width: min(100% - 22px, 1050px);
+  }
+
+  .hero {
+    padding-top: 38px;
+  }
+
+  .period-card {
+    grid-template-columns: 1fr;
+  }
+
+  .period-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .poster-grid {
+    grid-template-columns: 1fr;
+  }
+}
